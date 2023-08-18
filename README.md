@@ -1,4 +1,4 @@
-# SA 2023 3B AgendaSenai
+# SA 2023 3B Agenda S
 Controle de Entrada e Saída
 
 Integrantes:  Murilo Romeiro Mainardes Pinto, Lucas Keller da Silva, Emílio Freitas, Ian Alexander Amaral Belivuk, Daniel Siqueira Moraes
