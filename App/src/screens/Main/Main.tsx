@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Button} from 'react-native';
+import { View, StyleSheet} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -20,11 +20,16 @@ export function Main () {
         navigation.navigate('ChegadaAtrasada')
     }
   
+    function openScreen4(){
+        navigation.navigate('Requests')
+    }
+  
     return (
     <View style={styles.container}>
         <TouchableOpacity onPress={openScreen} style={styles.next}>Saídas Antecipadas</TouchableOpacity>
         <TouchableOpacity onPress={openScreen2} style={styles.next}>Solicitar Saída</TouchableOpacity>
         <TouchableOpacity onPress={openScreen3} style={styles.next}>Chegadas Atrasadas</TouchableOpacity>
+        <TouchableOpacity onPress={openScreen4} style={styles.next}>Solicitações</TouchableOpacity>
     </View>
   );
 }
