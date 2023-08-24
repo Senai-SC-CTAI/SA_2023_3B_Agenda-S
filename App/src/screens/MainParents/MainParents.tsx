@@ -33,7 +33,7 @@ export function MainParents() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "blue",
+        backgroundColor: "white",
         justifyContent: "center"
     },
     button: {

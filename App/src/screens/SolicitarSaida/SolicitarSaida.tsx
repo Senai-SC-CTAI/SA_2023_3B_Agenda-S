@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import CustomButton from '../../components/Button/button';
 import CustomInput from '../../components/Input/input';
@@ -44,18 +44,17 @@ const styles = StyleSheet.create({
         top: '15%'
     },
     justificar: {
-        marginBottom: 25,
-        alignItems: 'center'
+        marginBottom: 25
     },
     horario: {
-        marginBottom: 25,
-        alignItems: 'center',
+        marginBottom: 25
     },
     legenda: {
         marginBottom: 15,
-        textAlign: 'left'
+        marginLeft: 50
     },
     button: {
+        marginTop: 15,
         marginBottom: 25,
         alignItems: 'center'
     }

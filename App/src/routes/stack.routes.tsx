@@ -39,9 +39,9 @@ export function StackRoutes(){
                     title: 'Login',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={Login}
             />
@@ -51,9 +51,9 @@ export function StackRoutes(){
                     title: 'Parents Login',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={ParentsLogin}
             />
@@ -63,9 +63,9 @@ export function StackRoutes(){
                     title: 'Main',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={Main}
             />
@@ -75,9 +75,9 @@ export function StackRoutes(){
                     title: 'Main Parents',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={MainParents}
             />
@@ -87,9 +87,9 @@ export function StackRoutes(){
                     title: 'Solicitar Saída',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={SolicitarSaida}
             />
@@ -99,9 +99,9 @@ export function StackRoutes(){
                     title: 'Solicitar Saída',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={PSolicitarSaida}
             />
@@ -123,9 +123,9 @@ export function StackRoutes(){
                     title: 'Saída Antecipada',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={PSaidaAntecipada}
             />
@@ -135,9 +135,9 @@ export function StackRoutes(){
                     title: 'Forgot Password',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={ForgotPassword}
             />
@@ -159,9 +159,9 @@ export function StackRoutes(){
                     title: 'Chegada Atrasada',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={PChegadaAtrasada}
             />
@@ -171,9 +171,9 @@ export function StackRoutes(){
                     title: 'Solicitações',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={Requests}
             />
@@ -183,9 +183,9 @@ export function StackRoutes(){
                     title: 'Solicitações',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={PRequests}
             />
