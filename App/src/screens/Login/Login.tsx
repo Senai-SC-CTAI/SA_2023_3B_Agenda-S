@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity} from 'react-native';
-
+import { View, StyleSheet, TouchableOpacity, Image, Text, Button} from 'react-native';
+import CustomButton from '../../components/Button/button';
+import CustomInput from '../../components/Input/input';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -20,9 +21,19 @@ export function Login() {
     }
     return (
     <View style={styles.container}>
-        <TouchableOpacity onPress={openScreen} style={styles.next}>Entrar</TouchableOpacity>
-        <TouchableOpacity onPress={openScreen2} style={styles.next}>Esqueceu sua senha?</TouchableOpacity>
-        <TouchableOpacity onPress={openScreen3} style={styles.next}>Clique aqui para fazer login como responsável</TouchableOpacity>
+        <View style={styles.header}>
+            <Image style={styles.icon} source={require('../../../assets/icon.png')}/>
+        </View>
+        <View style={styles.main}>
+            <CustomInput placeholderText={"E-mail institucional"}/>
+            <CustomButton onPress={openScreen} buttonText={"Entrar"}/>
+            <CustomButton onPress={openScreen2} buttonText={"Esqueceu sua senha?"}/>
+            <Text style={styles.clickHere}>Clique <span style={styles.clickHereGreen}>
+                <TouchableOpacity onPress={openScreen3}>aqui</TouchableOpacity></span> para fazer seu Login como responsável</Text>
+        </View>
+        <View style={styles.footer}>
+
+        </View>
     </View>
   );
 }
@@ -42,8 +53,34 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         padding: 15,
         fontFamily: 'arial',
-        border: 1,
         borderRadius: 10,
         marginBottom: 20,
-    }
+    },
+    header: {
+
+    },
+    footer: {
+
+    },
+    icon: {
+        width: 30,
+        marginTop: '20%',
+        height: '30%',
+        alignSelf: 'center',
+        resizeMode: 'contain',
+    },
+    main: {
+        alignItems: 'center',
+        gap: 20,
+    },
+    clickHere: {
+        fontSize: 16,
+        width: "66%",
+        textAlign: "center",
+    
+    },
+    clickHereGreen: {
+        color: "#1C8C7D",
+        fontWeight: "bold",
+    },
 })
