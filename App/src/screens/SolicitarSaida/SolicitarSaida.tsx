@@ -7,6 +7,7 @@ import CustomInput from '../../components/Input/input';
 export function SolicitarSaida() {
     return (
         <View style={styles.container}>
+            
             <MaterialCommunityIcons style={styles.icon} name="calendar-clock" size={65} color="#1C8C7D" />
             <Text style={styles.title}>Solicitar Saída</Text>
             <View style={styles.justificar}>

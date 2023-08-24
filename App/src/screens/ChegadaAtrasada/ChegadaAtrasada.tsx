@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 
 export function ChegadaAtrasada() {
     return (
         <View style={styles.container}>
+
             <Text style={styles.title}>Chegadas Atrasadas</Text>
             <MaterialCommunityIcons style={styles.icon} name="clock-alert-outline" size={65} color="#1C8C7D" />
 

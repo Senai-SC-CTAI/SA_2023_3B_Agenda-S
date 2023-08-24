@@ -22,7 +22,7 @@ export function Login() {
     return (
     <View style={styles.container}>
         <View style={styles.header}>
-            <Image style={styles.icon} source={require('../../../assets/icon.png')}/>
+            <Image style={styles.icon} source={require('../../../assets/logo.png')}/>
         </View>
         <View style={styles.main}>
             <CustomInput placeholderText={"E-mail institucional"}/>
@@ -41,7 +41,7 @@ export function Login() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFF",
+        backgroundColor: "white",
         justifyContent: "center"
     },
     next: {
