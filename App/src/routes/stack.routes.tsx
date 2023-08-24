@@ -111,9 +111,9 @@ export function StackRoutes(){
                     title: 'Saída Antecipada',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={SaidaAntecipada}
             />
@@ -147,9 +147,9 @@ export function StackRoutes(){
                     title: 'Chegada Atrasada',
                     headerTitleAlign: 'left',
                     headerStyle: {
-                        backgroundColor: 'navy'
+                        backgroundColor: 'white'
                     },
-                    headerTintColor: '#fff'
+                    headerTintColor: 'black'
                 }}
                 component={ChegadaAtrasada}
             />
