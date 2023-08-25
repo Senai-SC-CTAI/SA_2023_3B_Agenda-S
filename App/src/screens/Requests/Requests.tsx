@@ -1,9 +1,6 @@
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Text, View, StyleSheet} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import { Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 export function Requests() {
 
@@ -41,11 +38,15 @@ const styles = StyleSheet.create({
     },
     titulo: {
         fontSize: 20,
-        top: "15%",
+        top: "25%",
+        position: 'fixed',
+        color: '#1C8C7D',
+        alignSelf: 'center'
     },
     icone: {
         alignSelf: "center",
-        top: "25%",
+        top: "15%",
+        position: 'fixed'
     },
     texto1: {
         fontSize: 20,

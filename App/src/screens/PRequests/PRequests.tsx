@@ -53,11 +53,15 @@ const styles = StyleSheet.create({
     },
     titulo: {
         fontSize: 20,
-        top: "15%",
+        top: "25%",
+        position: 'fixed',
+        color: '#1C8C7D',
+        alignSelf: 'center'
     },
     icone: {
         alignSelf: "center",
-        top: "25%",
+        top: "15%",
+        position: 'fixed'
     },
     texto1: {
         fontSize: 20,
