@@ -43,7 +43,7 @@ export function PRequests() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFF",
+        backgroundColor: "white",
         justifyContent: "center"
     },
     text: {
