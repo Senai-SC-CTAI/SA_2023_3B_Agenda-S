@@ -37,10 +37,7 @@ export function StackRoutes(){
                 name='Login'
                 options={{
                     title: 'Login',
-                    headerTitleAlign: 'left',
-                    headerStyle: {
-                        backgroundColor: 'white'
-                    },
+                    headerTitleAlign: 'center',
                     headerTintColor: 'black'
                 }}
                 component={Login}
@@ -49,7 +46,7 @@ export function StackRoutes(){
                 name='ParentsLogin'
                 options={{
                     title: 'Parents Login',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -61,7 +58,7 @@ export function StackRoutes(){
                 name='Main'
                 options={{
                     title: 'Main',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -73,7 +70,7 @@ export function StackRoutes(){
                 name='MainParents'
                 options={{
                     title: 'Main Parents',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -85,7 +82,7 @@ export function StackRoutes(){
                 name='SolicitarSaida'
                 options={{
                     title: 'Solicitar Saída',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -97,7 +94,7 @@ export function StackRoutes(){
                 name='PSolicitarSaida'
                 options={{
                     title: 'Solicitar Saída',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -109,7 +106,7 @@ export function StackRoutes(){
                 name='SaidaAntecipada'
                 options={{
                     title: 'Saída Antecipada',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -121,7 +118,7 @@ export function StackRoutes(){
                 name='PSaidaAntecipada'
                 options={{
                     title: 'Saída Antecipada',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -133,7 +130,7 @@ export function StackRoutes(){
                 name='ForgotPassword'
                 options={{
                     title: 'Forgot Password',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -145,7 +142,7 @@ export function StackRoutes(){
                 name='ChegadaAtrasada'
                 options={{
                     title: 'Chegada Atrasada',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -157,7 +154,7 @@ export function StackRoutes(){
                 name='PChegadaAtrasada'
                 options={{
                     title: 'Chegada Atrasada',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -169,7 +166,7 @@ export function StackRoutes(){
                 name='Requests'
                 options={{
                     title: 'Solicitações',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
@@ -181,7 +178,7 @@ export function StackRoutes(){
                 name='PRequests'
                 options={{
                     title: 'Solicitações',
-                    headerTitleAlign: 'left',
+                    headerTitleAlign: 'center',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
