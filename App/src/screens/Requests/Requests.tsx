@@ -1,17 +1,11 @@
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Text, View, StyleSheet, Button, Image } from 'react-native';
-
+import { Text, View, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export function PRequests() {
-    const navigation = useNavigation();
-
-    function openScreen() {
-        navigation.navigate('Login')
-    }
+export function Requests() {
 
     return (
         <View style={styles.container}>
