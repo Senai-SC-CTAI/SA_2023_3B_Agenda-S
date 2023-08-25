@@ -75,10 +75,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     header: {
-
+        position: 'fixed',
+        top: '20%',
+        width: '100%',
     },
     footer: {
-
+        position: 'fixed',
+        bottom: '20%',
+        width: '100%',
     },
     logo: {
         width: '50%',
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
         marginTop: '5%',
     },
     titulo: {
-        fontSize: 24,
+        fontSize: 26,
         width: "66%",
         textAlign: "center",
         alignSelf: 'center',
@@ -115,8 +119,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     senai: {
-        width: "10%",
-        height: "50%",
+        width: '50%',
+        height: '70%',
+        alignSelf: 'center',
+        resizeMode: 'contain',
     },
     eyeButton: {
         justifyContent: 'center',
