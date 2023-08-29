@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     header: {
-        position: 'fixed',
-        top: '20%',
+        position: 'absolute',
+        top: '5%',
         width: '100%',
     },
     footer: {
@@ -79,10 +79,10 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     logo: {
-        width: '50%',
-        height: '70%',
         alignSelf: 'center',
         resizeMode: 'contain',
+        width: 200,
+        height: 100,
     },
     main: {
         alignItems: 'center',

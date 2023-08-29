@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Image, Text,TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Text, TextInput } from 'react-native';
 import CustomButton from '../../components/Button/button';
 import CustomInput from '../../components/Input/input';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 
 export function Login() {
@@ -32,7 +35,7 @@ export function Login() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-            <Image source={require('../../../assets/logo.png')} style={styles.logo} />
+                <Image source={require('../../../assets/logo.png')} style={styles.logo} />
                 <Text style={styles.titulo}>Faça seu Login</Text>
             </View>
             <View style={styles.main}>
@@ -75,8 +78,8 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     header: {
-        position: 'fixed',
-        top: '20%',
+        position: 'absolute',
+        top: '5%',
         width: '100%',
     },
     footer: {
@@ -85,10 +88,12 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     logo: {
-        width: '50%',
-        height: '70%',
+        // width: '50%',
+        // height: '70%',
         alignSelf: 'center',
         resizeMode: 'contain',
+        width: 200,
+        height: 100,
     },
     main: {
         alignItems: 'center',
