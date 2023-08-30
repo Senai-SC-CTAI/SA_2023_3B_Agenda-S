@@ -23,3 +23,9 @@
  npm install react-native-vector-icons
 
 https://reactnavigation.org/docs/stack-navigator/#options
+
+- Refazer “Esqueci minha senha”
+- Adicionar escolha da data ao “Solicitar Saída”
+- Fazer a Splash Screen
+- Adicionar logo do SENAI no footer das telas
+- Remover a barra do Stack Navigation
