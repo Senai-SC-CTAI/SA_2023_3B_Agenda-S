@@ -12,6 +12,7 @@ body{
 
 header {
     margin-top: 10px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,19 +26,29 @@ header {
 }
 
 footer {
-    background-color: #1C8C7D;
+    background-color: #0166b3;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 175px;
+    height: 100px;
     display: flex;
     align-items: center;
 }
 
 #footerText {
-    font-size: 25px;
+    font-size: 17px;
     padding-left: 50px;
     color: white;
+}
+
+#logos {
+    position: absolute;
+    right: 10%;
+    bottom: 50%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 #logoMain {
@@ -50,11 +61,21 @@ footer {
 }
 
 .container {
-    margin-top: 125px;
+    /* margin-top: 125px; */
+    background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 4px rgb(167, 153, 153);
+    padding: 50px;
+    width: 700px;
+    height: 350px;
 }
 
 .title {
@@ -85,7 +106,7 @@ footer {
 }
 
 .button {
-    margin-top: 10px;
+    margin-top: 5px;
     align-items: center;
     align-self: center;
     background-color: #1C8C7D;
@@ -94,6 +115,7 @@ footer {
     padding: 2px;
     width: 300px;
     box-shadow: 0px 4px 4px grey;
+    cursor: pointer;
 }
 
 .buttonText {
