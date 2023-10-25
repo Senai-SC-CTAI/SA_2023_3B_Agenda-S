@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const { Screen, Navigator} = createNativeStackNavigator();
 
-import { Start } from '../screens/Start/Start';
+import { SplashScreen } from '../screens/SplashScreen/SplashScreen';
 import { Login } from '../screens/Login/Login';
 import { ParentsLogin } from '../screens/ParentsLogin/ParentsLogin';
 import { ForgotPassword} from '../screens/ForgotPassword/ForgotPassword';
@@ -16,7 +16,6 @@ import { SaidaAntecipada } from '../screens/SaidaAntecipada/SaidaAntecipada';
 import { PSaidaAntecipada } from '../screens/PSaidaAntecipada/PSaidaAntecipada';
 import { SolicitarSaida } from '../screens/SolicitarSaida/SolicitarSaida';
 import { PSolicitarSaida } from '../screens/PSolicitarSaida/PSolicitarSaida';
-import { ImageBackground } from 'react-native/types';
 
 export function StackRoutes(){
     return(
@@ -26,12 +25,12 @@ export function StackRoutes(){
             }}*/
         >
             <Screen
-                name='Start'
+                name='Splash'
                 options={{
-                    title: 'Start',
+                    title: 'Splash',
                     headerShown: false
                 }}
-                component={Start}
+                component={SplashScreen}
             />
             <Screen
                 name='Login'

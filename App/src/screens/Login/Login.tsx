@@ -4,9 +4,6 @@ import CustomButton from '../../components/Button/button';
 import CustomInput from '../../components/Input/input';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
 
 
 export function Login() {
