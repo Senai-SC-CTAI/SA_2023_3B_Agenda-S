@@ -10,6 +10,8 @@ body{
     
 }
 
+/* header */
+
 header {
     margin-top: 10px;
     height: 80px;
@@ -25,6 +27,79 @@ header {
     box-shadow: 0px 4px 4px rgb(167, 153, 153);
 }
 
+#logoMain {
+    width: 66px;
+    height: 66px;
+    align-self: center;
+}
+
+#headerText {
+    font-size: 30px;
+}
+
+.logoDiv {
+    position: absolute;
+    left: 2.5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.senaiLogo {
+    width: 300px;
+    height: 41.3px;
+    align-self: center;
+}
+
+.logoImg {
+    width: 50px;
+    height: 50px;
+}
+
+.grow {
+    transition: all 0.5s;
+}
+
+.grow:hover{
+    transform: scale(1.2);
+}
+
+.textTitle {
+    color: navy;
+    font-size: 30px;
+}
+
+.textTitle span {
+    font-weight: bold;
+}
+
+.agendas {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    gap: 10px;
+}
+
+.icon {
+    align-self: center;
+}
+
+#profile {
+    width: 50px;
+}
+
+.logout {
+    transition: all 0.5s;
+    align-self: center;
+}
+
+.logout:hover {
+    transform: scale(1.1);
+}
+
+/* footer */
+
 footer {
     background-color: #0166b3;
     position: absolute;
@@ -37,8 +112,10 @@ footer {
 
 #footerText {
     font-size: 17px;
-    padding-left: 50px;
     color: white;
+    position: absolute;
+    left: 2.5%;
+    bottom: 0%;
 }
 
 #logos {
@@ -51,15 +128,7 @@ footer {
     justify-content: center;
 }
 
-#logoMain {
-    width: 66px;
-    height: 66px;
-    align-self: center;
-}
-
-#headerText {
-    font-size: 30px;
-}
+/* body */
 
 .container {
     /* margin-top: 125px; */
@@ -77,6 +146,12 @@ footer {
     padding: 50px;
     width: 700px;
     height: 350px;
+}
+
+.home {
+    margin-top: 2.5%;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .title {
@@ -110,7 +185,7 @@ footer {
     font-size: 16px;
 }
 
-.button {
+.buttonBlue {
     margin-top: 5px;
     align-items: center;
     align-self: center;
@@ -129,58 +204,11 @@ footer {
     font-weight: bold;
 }
 
-.logoDiv {
-    position: absolute;
-    left: 2.5%;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.senaiLogo {
-    width: 300px;
-    height: 41.3px;
-    align-self: center;
-}
-
-.logoImg {
-    width: 50px;
-    height: 50px;
-}
-
-.grow {
-    transition: all 0.5s;
-}
-
-.grow:hover{
-    transform: scale(1.2);
-}
-
 #logoSenai {
     position: absolute;
     width: 300px;
     left: 50px;
 }
-
-.textTitle {
-    color: navy;
-    font-size: 30px;
-}
-
-.textTitle span {
-    font-weight: bold;
-}
-
-.agendas {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    gap: 10px;
-}
-
-/* profile */
-
 
 .user {
     position: absolute;
@@ -214,20 +242,108 @@ footer {
     margin-top: -25px;
 }
 
-.icon {
-    align-self: center;
+.buttonAndSearch {
+    position: absolute;
+    left: 50%;
+    top: 22%;
+    transform: translate(-50%, -50%);
 }
 
-#profile {
-    width: 50px;
+.dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logout {
-    transition: all 0.5s;
-    align-self: center;
+/* .btn {
+    width: 150px;
+} */
+
+.searchBar {
+    /* margin-top: 125px; */
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgb(167, 153, 153);
+    margin-top: 20px;
+    /* padding: 33px 100px; */
+    padding: 33px;
+    width: 500px;
+    /* width: 100%; */
+    height: 50px;
+
 }
 
-.logout:hover {
-    transform: scale(1.1);
+#add {
+    position: absolute;
+    left: 3%;
+    cursor: pointer;
 }
 
+#search {
+    position: absolute;
+    right: 9%;
+}
+
+.searchInput {
+    border: 0;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    padding-left: 15px;
+    height: 33px;
+    width: 600px;
+    margin-left: 9%;
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.name {
+    position: absolute;
+    left: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.persButtons {
+    position: absolute;
+    right: 5%;
+    width: 333px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonPers {
+    text-align: center;
+    width: 200px;
+    /* padding: 3px 30px; */ 
+    padding: 5px 5px;
+    align-items: center;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 2px 2px grey;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.grey {
+    background-color: grey;
+}

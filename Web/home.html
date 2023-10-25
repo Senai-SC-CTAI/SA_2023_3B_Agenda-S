@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda S</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/icon.ico">
 </head>
@@ -34,25 +35,50 @@
         </div>
     </header>
     
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+    <div class="buttonAndSearch">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Alunos
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Pais</a>
+              <a class="dropdown-item" href="#">Professores</a>
+              <a class="dropdown-item" href="#">Porteiros</a>
+              <a class="dropdown-item" href="#">Coordenadores</a>
+            </div>
+          </div>
+          <div class="searchBar">
+              <img id="add" src="./assets/icons/add.svg" alt="Cadastrar">
+              <input class="searchInput" type="text" placeholder="">
+              <img id="search" src="./assets/icons/search.svg" alt="Pesquisar">
+          </div>
+
+    </div>
+
+    <div class="container home">
+        <div class="person">
+            <p class="name">Fernando da Silva Marques</p>
+            <div class="persButtons">
+                <button class="buttonPers grey">Ver</button>
+                <button class="buttonPers green">Editar</button>
+                <button class="buttonPers red">Excluir</button>
+            </div>
         </div>
-    </div>
-
-    <div class="searchBar">
-        
-    </div>
-
-    <div class="container">
-        <div class="buttonsDiv">
-            <p class="title">Faça seu Login</p>
-            <input class="input" type="text" placeholder="E-mail institucional">
-            <input class="input" type="password" placeholder="Senha">
-            <a href="./home.html"><button class="button"><p class="buttonText">Entrar</p></button></a>
+        <div class="person">
+            <p class="name">Larissa Rodrigues Maia</p>
+            <div class="persButtons">
+                <button class="buttonPers grey">Ver</button>
+                <button class="buttonPers green">Editar</button>
+                <button class="buttonPers red">Excluir</button>
+            </div>
+        </div>
+        <div class="person">
+            <p class="name">Pedro Amaral Gurgel</p>
+            <div class="persButtons">
+                <button class="buttonPers grey">Ver</button>
+                <button class="buttonPers green">Editar</button>
+                <button class="buttonPers red">Excluir</button>
+            </div>
         </div>
     </div>
 
@@ -78,6 +104,9 @@
         </div>
     </footer>
     
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
