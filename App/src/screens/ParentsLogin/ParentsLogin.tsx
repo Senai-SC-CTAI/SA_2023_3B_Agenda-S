@@ -32,7 +32,7 @@ export function ParentsLogin() {
                 <Text style={styles.titulo}>Faça seu Login</Text>
             </View>
             <View style={styles.main}>
-                <CustomInput placeholderText={"E-mail institucional"} />
+                <CustomInput placeholderText={"E-mail"} />
                 <View style={styles.icon}>
                     <TouchableOpacity style={styles.eyeButton}>
                         <Icon name={hidePassword ? 'eye' : 'eye-slash'} size={20} style={styles.eye} onPress={togglePasswordVisibility} />
@@ -43,9 +43,9 @@ export function ParentsLogin() {
                 <CustomButton onPress={openScreen} buttonText={"Entrar"} />
                 <Text style={styles.text}><TouchableOpacity onPress={openScreen2}>Esqueceu sua senha?</TouchableOpacity></Text>
             </View>
-            <View style={styles.footer}>
+
                 <Image source={require('../../../assets/sesi-senai.png')} style={styles.senai} />
-            </View>
+            
         </View>
     );
 }
@@ -71,11 +71,6 @@ const styles = StyleSheet.create({
     header: {
         position: 'absolute',
         top: '5%',
-        width: '100%',
-    },
-    footer: {
-        position: 'fixed',
-        bottom: '20%',
         width: '100%',
     },
     logo: {
@@ -113,10 +108,12 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     senai: {
-        width: '50%',
-        height: '70%',
+        width: '80%',
+        height: '15%',
         alignSelf: 'center',
         resizeMode: 'contain',
+        position: 'fixed',
+        bottom: '2%'
     },
     eyeButton: {
         justifyContent: 'center',
@@ -138,16 +135,16 @@ const styles = StyleSheet.create({
         width: 300,
         height: 45,
         shadowColor: 'grey',
-        shadowOffset: { width: 0, height: 4 }, 
+        shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.2,
         shadowRadius: 4,
-      },
-      icon: {
+    },
+    icon: {
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'center',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-      },
+    },
 })

@@ -1,29 +1,33 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 export function SaidaAntecipada() {
+    const data = [
+        { date: '15/04/2023', time: '8:25' },
+        { date: '15/04/2023', time: '8:25' },
+        { date: '15/04/2023', time: '8:25' },
+        { date: '26/06/2023', time: '8:50' },
+    ];
+
+    const renderItem = ({ item }) => (
+        <View style={styles.historico}>
+            <Text style={styles.data}>{item.date}</Text>
+            <Text style={styles.legenda}>(saiu {item.time})</Text>
+        </View>
+    );
+
     return (
         <View style={styles.container}>
+            <View style={styles.iconContainer}>
+                <FontAwesome5 style={styles.icon} name="calendar-check" size={65} color="#1C8C7D" />
+            </View>
             <Text style={styles.title}>Saídas Antecipadas</Text>
-            <FontAwesome5 style={styles.icon} name="calendar-check" size={65} color="#1C8C7D" />
-
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(saiu 8:25)</Text>
-            </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(saiu 8:25)</Text>
-            </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(saiu 8:25)</Text>
-            </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>26/06/2023</Text>
-                <Text style={styles.legenda}>(saiu 8:50)</Text>
-            </View>
+            <FlatList
+                data={data}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}
+            />
         </View>
     );
 }
@@ -35,22 +39,21 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
     },
+    iconContainer: {
+        alignItems: 'center',
+        marginTop: 20,
+    },
     title: {
         color: '#1C8C7D',
-        alignText: 'center',
+        textAlign: 'center',
         fontSize: 20,
-        alignSelf: 'center',
-        position: 'fixed',
-        top: '25%'
     },
     icon: {
-        alignSelf: 'center',
-        position: 'fixed',
-        top: '15%'
+        marginTop: 10,
     },
     data: {
         color: 'black',
-        fontSize: 28
+        fontSize: 28,
     },
     legenda: {
         color: '#008000',
@@ -59,4 +62,4 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         marginLeft: 25,
     }
-})
+});

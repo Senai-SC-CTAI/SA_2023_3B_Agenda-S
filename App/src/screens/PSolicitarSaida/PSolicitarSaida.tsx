@@ -10,7 +10,7 @@ export function PSolicitarSaida() {
             <MaterialCommunityIcons style={styles.icon} name="calendar-clock" size={65} color="#1C8C7D" />
             <Text style={styles.title}>Solicitar Saída</Text>
             <View style={styles.justificar}>
-                <Text style={styles.legenda}>Justifique (Opicional):</Text>
+                <Text style={styles.legenda}>Justifique (Opcional):</Text>
                 <CustomInput placeholderText={'Escreva'} />
             </View>
             <View style={styles.horario}>

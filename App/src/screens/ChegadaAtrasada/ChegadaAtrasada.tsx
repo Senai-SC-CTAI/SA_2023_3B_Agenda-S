@@ -1,30 +1,40 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export function ChegadaAtrasada() {
+    const data = [
+        { date: '15/04/2023', time: '8:25' },
+        { date: '15/04/2023', time: '8:25' },
+        { date: '15/04/2023', time: '8:25' },
+        { date: '26/06/2023', time: '8:50' },
+        { date: '27/06/2023', time: '9:00' }, 
+        { date: '28/06/2023', time: '8:45' }, 
+        { date: '28/06/2023', time: '8:45' }, 
+        { date: '28/06/2023', time: '8:45' }, 
+        { date: '28/06/2023', time: '8:45' }, 
+        { date: '28/06/2023', time: '8:45' }, 
+       
+    ];
+
+    const renderItem = ({ item }) => (
+        <View style={styles.historico}>
+            <Text style={styles.data}>{item.date}</Text>
+            <Text style={styles.legenda}>(entrou {item.time})</Text>
+        </View>
+    );
+
     return (
         <View style={styles.container}>
-
-            <Text style={styles.title}>Chegadas Atrasadas</Text>
-            <MaterialCommunityIcons style={styles.icon} name="clock-alert-outline" size={65} color="#1C8C7D" />
-
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(entrou 8:25)</Text>
+            <View style={styles.header}>
+                <Text style={styles.title}>Chegadas Atrasadas</Text>
+                <MaterialCommunityIcons style={styles.icon} name="clock-alert-outline" size={65} color="#1C8C7D" />
             </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(entrou 8:25)</Text>
-            </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>15/04/2023</Text>
-                <Text style={styles.legenda}>(entrou 8:25)</Text>
-            </View>
-            <View style={styles.historico}>
-                <Text style={styles.data}>26/06/2023</Text>
-                <Text style={styles.legenda}>(entrou 8:50)</Text>
-            </View>
+            <FlatList
+                data={data}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => index.toString()}
+            />
         </View>
     );
 }
@@ -36,22 +46,21 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
     },
+    header: {
+        alignItems: 'center',
+        marginTop: 20,
+    },
     title: {
         color: '#1C8C7D',
-        alignText: 'center',
+        textAlign: 'center',
         fontSize: 20,
-        alignSelf: 'center',
-        position: 'fixed',
-        top: '25%'
     },
     icon: {
-        alignSelf: 'center',
-        position: 'fixed',
-        top: '15%'
+        marginTop: 10,
     },
     data: {
         color: 'black',
-        fontSize: 28
+        fontSize: 28,
     },
     legenda: {
         color: '#FA0000',
@@ -60,4 +69,4 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         marginLeft: 25,
     }
-})
+});
