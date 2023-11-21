@@ -1,55 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agenda S</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/x-icon" href="./assets/icon.ico">
-</head>
-<body>
-    <header>
-        <div class="logoDiv">
-            <img class="senaiLogo" src="./assets/sesi-senai.png" alt="SENAI">
-        </div>
-        <div class="agendas">
-            <img id="logoMain" src="./assets/logo.png" alt="Agenda S Logo">
-            <p id="headerText">Agenda S</p>
-        </div>
-    </header>
-    <div class="container">
-        <img id="logoSenai" src="./assets/sesi-senai.png" alt="SENAI">
-        <div class="buttonsDiv">
-            <p class="title">Faça seu Login</p>
-            <input class="input" type="text" placeholder="E-mail institucional">
-            <input class="input" type="password" placeholder="Senha">
-            <a href="./home.html"><button class="buttonBlue"><p class="buttonText">Entrar</p></button></a>
-        </div>
-    </div>
-
-    <footer>
-        <p id="footerText">SENAI Florianópolis (CTAI)<br>Fone: (48) 3239-5800<br>
-            SC-401, 3730 - Saco Grande, Florianópolis - SC, 88032-005</p>
-        <div id="logos">
-            <a href="https://www.facebook.com/senaisc/" title="Ir para Facebook" target="_blank">
-                <img class="logoImg grow" src="./assets/icons/facebook.svg" alt="Facebook">
-            </a>
-            <a href="https://www.youtube.com/@senaiconhecimento" title="Ir para YouTube" target="_blank">
-                <img class="logoImg grow" src="./assets/icons/youtube.svg" alt="YouTube">
-            </a>
-            <a href="https://twitter.com/SENAIsc" title="Ir para Twitter" target="_blank">
-                <img class="logoImg grow" src="./assets/icons/twitter.svg" alt="Twitter">
-            </a>
-            <a href="https://www.linkedin.com/school/senai-sc/" title="Ir para LinkedIn" target="_blank">
-                <img class="logoImg grow" src="./assets/icons/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/senai.sc/" title="Ir para Instagram" target="_blank">
-                <img class="logoImg grow" src="./assets/icons/instagram.svg" alt="Instagram">
-            </a>
-        </div>
-    </footer>
-    
-    <script src="./js/script.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
