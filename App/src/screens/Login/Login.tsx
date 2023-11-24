@@ -18,7 +18,6 @@ const logar = async (email:string, password:string) => {
     }
    };
 
-
 export function Login() {
 
     // hide password
@@ -44,7 +43,7 @@ export function Login() {
             //da pra fazer com o navigate também
 
         } catch (error) {
-            console.error('Erro ao se logar:', error);
+            console.error('Erro ao efetuar login:', error);
         }
     };
 

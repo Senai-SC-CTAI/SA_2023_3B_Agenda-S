@@ -20,10 +20,10 @@ export function FuncionarioCadastro(){
       await axios.post(`http://localhost:8090/portaria`, novoFuncionario)
       // handleClick()
       setFuncionarioNome("")
-      alert("Funcionario " + funcionarioNome + " cadastrado com sucesso")
+      alert("Funcionário " + funcionarioNome + " cadastrado com sucesso")
 
     } catch (error) {
-      console.log('Erro ao criar Funcionario: ', error);
+      console.log('Erro ao criar funcionário: ', error);
     }
   }
 
@@ -33,12 +33,12 @@ export function FuncionarioCadastro(){
                 <p>
                   <span>Informe os dados do </span>
                     <span>
-                    funcionario
+                    funcionário
                     </span>
                 </p>
                 <input
                   type="text"
-                  placeholder='Nome do Funcionario'
+                  placeholder='Nome do funcionário'
                   value={funcionarioNome}
                   onChange={(e) => setFuncionarioNome(e.target.value)}
                 />
@@ -80,7 +80,7 @@ export function ViewFuncionarios() {
           await axios.delete(`http://localhost:8090/portaria/${cpf}`);
           fetchFuncionarios();
       } catch (error) {
-          console.error('Erro ao excluir funcionario:', error);
+          console.error('Erro ao excluir funcionário:', error);
       }
   };
   return (

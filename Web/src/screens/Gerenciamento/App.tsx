@@ -116,7 +116,7 @@ function Gerenciamento() {
       alert(userName + " cadastrado com sucesso")
 
     } catch (error) {
-      console.log('Erro ao criar alubo: ', error);
+      console.log('Erro ao criar aluno: ', error);
     }
   }
 

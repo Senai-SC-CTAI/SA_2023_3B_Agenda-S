@@ -24,10 +24,10 @@ export function ResponsavelCadastro() {
             // handleClick()
             setFilho("")
             setNomeRes("")
-            alert("Responsavel " + nomeRes + " cadastrado com sucesso")
+            alert("Responsável " + nomeRes + " cadastrado com sucesso")
 
         } catch (error) {
-            console.log('Erro ao criar Responsavel: ', error);
+            console.log('Erro ao criar Responsável: ', error);
         }
     }
 
@@ -37,12 +37,12 @@ export function ResponsavelCadastro() {
                 <p>
                     <span>Informe os dados do </span>
                     <span>
-                        Responsavel
+                        Responsável
                     </span>
                 </p>
                 <input
                     type="text"
-                    placeholder='Nome do Responsavel'
+                    placeholder='Nome do Responsável'
                     value={nomeRes}
                     onChange={(e) => setNomeRes(e.target.value)}
                 />

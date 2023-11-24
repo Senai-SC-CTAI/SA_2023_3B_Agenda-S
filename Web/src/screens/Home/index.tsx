@@ -29,10 +29,9 @@ export function Screen1() {
         alert("Verifique novamente seu login e senha.");
       }
       window.location.href = response;
-      //da pra fazer com o navigate também
 
     } catch (error) {
-      console.error('Erro ao se logar:', error);
+      console.error('Erro ao efetuar login:', error);
     }
   };
 

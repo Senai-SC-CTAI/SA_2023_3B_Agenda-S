@@ -22,7 +22,7 @@ const fetchUsuarios = async () => {
         const response = await axios.get('http://localhost:8090/usuarios');
         setUsuarios(response.data);
     } catch (error) {
-        console.error('Erro ao buscar usuarios:', error);
+        console.error('Erro ao buscar usuários:', error);
     }
 }
 
