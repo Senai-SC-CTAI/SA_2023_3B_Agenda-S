@@ -3,8 +3,35 @@ import { Text, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import CustomButton from '../../components/Button/button';
 import CustomInput from '../../components/Input/input';
+import axios from 'axios';
+import { useEffect, useState } from 'react'
+import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
 export function SolicitarSaida() {
+
+    const [descricao, setDescricao] = useState("")
+    const [horario, setHorario] = useState("")
+    const [status, setStatus] = useState("")
+    
+    // POST
+    const handleSubmit = async () => {
+      try {
+        let novaSolicitacao = {
+          descricao: descricao,
+          horario: horario,
+        }
+  
+        await axios.post(`http://localhost:8090/solicitacao`, novaSolicitacao)
+        // handleClick()
+        setDescricao("")
+        setHorario("")
+        alert("Solicitacao enviada")
+  
+      } catch (error) {
+        console.log('Erro ao criar soliciatacao: ', error);
+      }
+    }
+
     return (
         <View style={styles.container}>
             
@@ -12,14 +39,17 @@ export function SolicitarSaida() {
             <Text style={styles.title}>Solicitar Saída</Text>
             <View style={styles.justificar}>
                 <Text style={styles.legenda}>Justifique (Opcional):</Text>
-                <CustomInput placeholderText={'Escreva'} />
+                <TextInput placeholder={'Escreva'} value={descricao} onChangeText={(e) => setDescricao(e)} />
             </View>
             <View style={styles.horario}>
                 <Text style={styles.legenda}>Horário:</Text>
-                <CustomInput placeholderText={'__:__'} />
+                <TextInput placeholder={'__:__'} value={horario} onChangeText={(e) => setHorario(e)} />
             </View>
             <View style={styles.button}>
-                <CustomButton buttonText={"Enviar"} />
+                <TouchableOpacity 
+                 onPress={handleSubmit}>
+                    Enviar
+                </TouchableOpacity>
             </View>
         </View>
     );

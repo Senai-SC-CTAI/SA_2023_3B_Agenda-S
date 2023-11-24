@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, View, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import axios from 'axios';
+
+interface Responsavel {
+    nome: string;
+    filho: string;
+    cpf: number;
+}
 
 export function PRequests() {
-    const data = [
-        { date: '15/04/23 - 12:40' },
-        { date: '26/06/23 - 12:40' },
-        { date: '26/06/23 - 12:40' },
-        { date: '26/06/23 - 12:40' },
+
+    const [responsaveis, setResponsaveis] = useState<Responsavel[]>([])
+
+    useEffect(() => {
+        fetchResponsaveis();
+    }, []);
+
+    // GET
+    const fetchResponsaveis = async () => {
+        try {
+            const response = await axios.get('http://localhost:8090/pais');
+            setResponsaveis(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // DELETE
+    const handleDelete = async (cpf: any) => {
+        try {
+            await axios.delete(`http://localhost:8090/pais/${cpf}`);
+            fetchResponsaveis();
+        } catch (error) {
+            console.error('Erro ao excluir professor:', error);
+        }
+    };
+
+    // const data = [
+    //     { date: '15/04/23 - 12:40' },
+    //     { date: '26/06/23 - 12:40' },
+    //     { date: '26/06/23 - 12:40' },
+    //     { date: '26/06/23 - 12:40' },
      
-    ];
+    // ];
 
     const renderItem = ({ item }) => (
         <View style={styles.historico}>
@@ -29,12 +63,13 @@ export function PRequests() {
                     <MaterialCommunityIcons style={styles.icone} name="frequently-asked-questions" size={65} color="#1C8C7D" />
                 </View>
                 <Text style={styles.titulo}>Saídas Solicitadas</Text>
+                {/* <Text>{responsaveis.nome}</Text> */}
             </View>
-            <FlatList
+            {/* <FlatList
                 data={data}
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
-            />
+            /> */}
         </View>
     );
 }
