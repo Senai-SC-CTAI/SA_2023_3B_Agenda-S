@@ -22,6 +22,10 @@ import
         path: '/gerenciamento',
         element: <Gerenciamento/>
       },
+      // {
+      //   path: '/manage',
+      //   element: <Manage/>
+      // },
       {
         path: '*',
         element: <h1>404</h1>

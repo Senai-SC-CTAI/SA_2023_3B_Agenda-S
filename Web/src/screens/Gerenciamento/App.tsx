@@ -1,6 +1,4 @@
 import './App.css'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import senaiLogo from '../../assets/sesi-senai.png'
 import add from '../../assets/icons/add.svg'
 import search from '../../assets/icons/search.svg'
@@ -9,6 +7,11 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import axios from 'axios';
+
+// users type 
+import { ResponsavelCadastro, ViewResponsaveis } from '../../components/Responsavel'
+import { ProfessorCadastro, ViewProfessores } from '../../components/Professor'
+import { FuncionarioCadastro, ViewFuncionarios } from '../../components/Funcionario'
 
 interface Aluno {
   nome: string;
@@ -31,6 +34,8 @@ function Gerenciamento() {
     setIsEditVisible(!isEditVisible)
   }
 
+  /// Alunos
+
   const [alunos, setAlunos] = useState<Aluno[]>([])
 
   const [userName, setUserName] = useState("")
@@ -39,6 +44,43 @@ function Gerenciamento() {
   const [userTelefone, setUserTelefone] = useState("")
 
   const [selectedAluno, setSelectedAluno] = useState<Aluno | null>(null);
+
+  // Select do usuario
+  const [selectedUser, setSelectedUser] = useState("aluno");
+  const handleUserChange = (event: { target: { value: any } }) => {
+    const selectedOption = event.target.value;
+    setSelectedUser(selectedOption);
+  };
+
+  // forms de cada tipo de usuario
+  const [alunoVisible, setAlunoVisible] = useState(false);
+  const [professorVisible, setProfessorVisible] = useState(false);
+  const [responsavelVisible, setResponsavelVisible] = useState(false);
+  const [funcionarioVisible, setFuncionarioVisible] = useState(false);
+
+  useEffect(() => {
+    if (selectedUser === "aluno") {
+      setProfessorVisible(false);
+      setResponsavelVisible(false);
+      setFuncionarioVisible(false);
+      setAlunoVisible(true);
+    } else if (selectedUser === "professor") {
+      setAlunoVisible(false);
+      setResponsavelVisible(false);
+      setFuncionarioVisible(false);
+      setProfessorVisible(true);
+    } else if (selectedUser === "responsavel") {
+      setAlunoVisible(false);
+      setProfessorVisible(false);
+      setFuncionarioVisible(false);
+      setResponsavelVisible(true);
+    } else if (selectedUser === "funcionario") {
+      setAlunoVisible(false);
+      setProfessorVisible(false);
+      setResponsavelVisible(false);
+      setFuncionarioVisible(true);
+    }
+  }, [selectedUser]);
 
   useEffect(() => {
     fetchUser();
@@ -63,16 +105,16 @@ function Gerenciamento() {
         pais: userResponsavel,
         telefone: userTelefone,
       }
-     
-        await axios.post(`http://localhost:8090/aluno`, novoAluno)
-        fetchUser();
-        // handleClick()
-        setUserName("")
-        setUserResponsavel("") 
-        setUserTurma("")
-        setUserTelefone("")
-        alert(userName + " cadastrado com sucesso")
-      
+
+      await axios.post(`http://localhost:8090/aluno`, novoAluno)
+      fetchUser();
+      // handleClick()
+      setUserName("")
+      setUserResponsavel("")
+      setUserTurma("")
+      setUserTelefone("")
+      alert(userName + " cadastrado com sucesso")
+
     } catch (error) {
       console.log('Erro ao criar alubo: ', error);
     }
@@ -122,10 +164,12 @@ function Gerenciamento() {
 
       <section className='main'>
         <div style={{ display: "flex", alignItems: 'center', gap: 12, marginTop: "15%" }}>
-          {!isVisible && (<span>Cadastrar</span>)}
-          <select name="type" className='select'>
-            <option value="0">Aluno</option>
-            <option value="1">Professor</option>
+          {!isVisible && (<span style={{ fontWeight: 600, fontSize: 20 }}>Cadastrar</span>)}
+          <select name="type" className='select' value={selectedUser} onChange={handleUserChange}>
+            <option value="aluno">Aluno</option>
+            <option value="professor">Professor</option>
+            <option value="responsavel">Responsável</option>
+            <option value="funcionario">Funcionário</option>
           </select>
         </div>
         <div className="inputSearch">
@@ -137,7 +181,38 @@ function Gerenciamento() {
         </div>
         {isVisible ? (
           <div className="containerGerenc">
-            <p>Alunos</p>
+            {alunoVisible && (
+              <>
+                <p>
+                  Alunos
+                </p>
+                {alunos.map((aluno, index) => (
+                  <>
+                    <div key={index} className="userItem">
+                      <p>{aluno.nome}</p>
+                      <div className="btns">
+                        <button>Ver</button>
+                        <button onClick={() => handleEditClick(aluno)} className='editBtn'>Editar</button>
+                        <button onClick={() => handleDelete(aluno.matricula)} className='removeBtn'>Excluir</button>
+                      </div>
+                    </div>
+                  </>
+                ))}
+              </>
+            )}
+            {professorVisible && (
+              <ViewProfessores />
+              )}
+            {responsavelVisible && (
+              <p>
+                <ViewResponsaveis />
+              </p>
+            )}
+            {funcionarioVisible && (
+              <p>
+                <ViewFuncionarios />
+              </p>
+            )}
             {isEditVisible && selectedAluno && (
               <div className="editDiv">
                 <input
@@ -153,59 +228,73 @@ function Gerenciamento() {
                 </button>
               </div>
             )}
-            {alunos.map((aluno, index) => (
-              <>
-                <div key={index} className="userItem">
-                  <p>{aluno.nome}</p>
-                  <div className="btns">
-                    <button>Ver</button>
-                    <button onClick={() => handleEditClick(aluno)}>Editar</button>
-                    <button onClick={() => handleDelete(aluno.matricula)}>Excluir</button>
-                  </div>
-                </div>
-              </>
-            ))}
+
 
           </div>
         ) :
           (
             <div className="containerGerenc">
-              <div className="cadastroDiv">
-                <p>
-                  <span>Informe</span> os dados do aluno
-                </p>
-                <input
-                  type="text"
-                  placeholder='Nome'
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder='Turma'
-                  value={userTurma}
-                  onChange={(e) => setUserTurma(e.target.value)}
-                />
-                <div className="input-group">
-                  <input
-                    type="text"
-                    placeholder='Nome do Responsável' 
-                    value={userResponsavel}
-                    onChange={(e) => setUserResponsavel(e.target.value)}
+              {alunoVisible && (
+                <>
+                  <div className="cadastroDiv">
+                    <p>
+                      <span>Informe os dados do </span>
+                      <span>
+                        aluno
+                      </span>
+                    </p>
+                    <input
+                      type="text"
+                      placeholder='Nome'
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
                     />
-                  <input
-                    type="text"
-                    placeholder='Telefone' 
-                    value={userTelefone} 
-                    onChange={(e) => setUserTelefone(e.target.value)}
+                    <input
+                      type="text"
+                      placeholder='Turma'
+                      value={userTurma}
+                      onChange={(e) => setUserTurma(e.target.value)}
                     />
-                </div>
-                <button
-                  type='submit'
-                  onClick={handleSubmit}>
-                  Cadastrar
-                </button>
-              </div>
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        placeholder='Nome do Responsável'
+                        value={userResponsavel}
+                        onChange={(e) => setUserResponsavel(e.target.value)}
+                      />
+                      <input
+                        type="text"
+                        placeholder='Telefone'
+                        value={userTelefone}
+                        onChange={(e) => setUserTelefone(e.target.value)}
+                      />
+                    </div>
+                    <button
+                      type='submit'
+                      onClick={handleSubmit}
+                      className='subBtn'
+                    >
+                      Cadastrar
+                    </button>
+                  </div>
+                </>
+              )}
+              {professorVisible && (
+                <>
+                  <ProfessorCadastro />
+                </>
+              )}
+              {responsavelVisible && (
+                <>
+                  <ResponsavelCadastro />
+                </>
+              )}
+              {funcionarioVisible && (
+                <>
+                  <FuncionarioCadastro />
+                </>
+              )}
+              <span onClick={handleClick} style={{ cursor: "pointer" }}>sair</span>
             </div>
           )}
 
